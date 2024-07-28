@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Documents</title>
+    <title>Documents</title>
     <link rel="stylesheet" href="documents.css">
 </head>
 <body>
     <header>
-        <img src="c:\Users\bobba\Downloads\image (2).png" alt="Logo" class="logo">
+        <img src="C:\Users\bobba\Downloads\HomePageLogo.png" alt="Logo" class="logo">
         <nav>
             <ul>
                 <li><a href="myeducation.html">My Education</a></li>
@@ -20,6 +20,54 @@
     </header>
     <main>
         <h1>Upload Your Documents</h1>
+        <form class="upload-form">
+            <div class="form-left">
+                <label for="document-name">Document Name:</label>
+                <input type="text" id="document-name" name="document-name" required>
+                
+                <label for="completion-date">Completion Date:</label>
+                <input type="date" id="completion-date" name="completion-date" required>
+            </div>
+            <div class="form-right">
+                <label for="file-upload" class="file-label">Drag and drop your file here or click to upload</label>
+                <input type="file" id="file-upload" name="file-upload" required>
+                <button type="submit" class="submit-btn">Submit</button>
+            </div>
+        </form>
+
+        
+        <h1>View Uploaded Documents</h1>
+        <div class="view-documents">
+            <table class="documents-table">
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Upload Date</th>
+                        <th>Select</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example rows; these should be dynamically generated based on uploaded documents -->
+                    <tr>
+                        <td>Course 1</td>
+                        <td>2023-01-01</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>Course 2</td>
+                        <td>2023-02-15</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="document-actions">
+                <h3>Select a course, then click view, download, or delete</h3>
+                <button class="action-btn">View</button>
+                <button class="action-btn">Download</button>
+                <button class="action-btn">Delete</button>
+            </div>
+        </div>
+
     </main>
 </body>
 </html>
