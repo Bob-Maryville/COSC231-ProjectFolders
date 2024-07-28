@@ -1,29 +1,37 @@
-header {
-    text-align: center;
-    background-color: #007bff;
-    color: rgb(255, 255, 255);
-}
-    
-h1 {
-    margin: 0;
-    font-size: 3em;
-}
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Registration Form</h2>
+<form action="/submit_registration" method="post">
+  <label for="fname">First Name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">Last Name:</label><br>
+  <input type="text" id="lname" name="lname"><br>
+  <label for="email">Email:</label><br>
+  <input type="text" id="email" name="email"><br>
+  <label for="password">Password:</label><br>
+  <input type="password" id="password" name="password"><br>
+  <p>Password must be at least 9 characters or numbers.</p>
+  <label for="cpassword">Confirm Password:</label><br>
+  <input type="password" id="cpassword" name="cpassword"><br>
+  <input type="submit" value="Submit">
+</form> 
+</body>
+</html>
 
-.logo {
-    vertical-align: middle;
-    max-height: 50px;
-}
-
-nav {
-    text-align: center;
-    margin-top: 20px;
-}
-
-nav ul {
-    list-style-type: none;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Login Form</h2>
+<form action="/submit_login" method="post">
+  <label for="email">Email:</label><br>
+  <input type="text" id="email" name="email"><br>
+  <label for="password">Password:</label><br>
+  <input type="password" id="password" name="password"><br>
+  <input type="checkbox" id="remember" name="remember">
+  <label for="remember">Remember me</label><br>
+  <a href="/forgot_password">Forgot Password?</a><br>
+  <input type="submit" value="Submit">
+</form> 
+</body>
+</html>
