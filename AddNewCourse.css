@@ -74,3 +74,18 @@ nav a:hover {
     color: #007BFF;
     cursor: pointer;
 }
+.course-details {
+        display: grid;
+        height: 400px;
+        align-content: space-evenly;
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+        background-color: #fefefe;
+        padding: 10px;
+      }
+      .grid-container > div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+      }
