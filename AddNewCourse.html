@@ -1,45 +1,44 @@
-<body>
-    <header>
-        <link rel="stylesheet" href="AddNewCourse.css">
-        <img src="Logo.png" alt="Logo" class="logo">
-        <nav>
-            <ul>
-                <li><a href="myeducation.html">My Education</a></li>
-                <li><a href="documents.html">Documents</a></li>
-                <li><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
-        <button class="account-btn">My Account</button>
-    </header>
-    
-    <section div class = "course-navigation">
-        <div style="text-decoration-line: underline;"><b>Current Courses</b></div>
-        <div style="text-decoration-line: underline;"><b>Completed Courses</b></div>
-        <div style="text-decoration-line: underline;"><b>Add A New Course</b><div>
-    </section>
-   
-    <article>
-        <form div class = "course-details">
-            <label for="cname">Course name:</label><br>
-            <input type="text" id="cname" name="cname"><br>
-            <label for="url">Course URL:</label><br>
-            <input type="text" id="url" name="url">
-            <label for="track">Certificate Track:</label><br>
-            <input type="text" id="track" name="track"><br>
-          </form>          
-    </article>
-   
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset = "UTF-8">
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+		<title>Add New Course</title>
+		<link rel="stylesheet" href="AddNewCourse.css">
+		<script type="module" src="Firebase_addcourse.js"></script>
+	</head>
+	<body>
+		<header>
+			<img src="images/Logo.png" alt="Logo" class="logo">
+			<nav>
+				<ul>
+					<li><a href="CurrentCourses.html">My Education</a></li>
+					<li><a href="documents.html">Documents</a></li>
+					<li><a href="reports.html">Reports</a></li>
+				</ul>
+			</nav>
+			<button class="account-btn" id="logout">Logout: <span id="loggedUserFirstName"></span></button>
+		</header>
 
-    <footer>
-        <form>
-            <input type="checkbox" id="Employment" name="Employment" value="Currently">
-            <label for="Employment"> Currently Employed</label><br>
-            <input type="checkbox" id="Completion" name="Completion" value="Time">
-            <label for="Completion"> Completed On</label><br>
-            <div style="text-decoration-line: underline;"><b>Date:</b></div>
-            <button type="button">Upload Certificate</button>
-            <button type="button">Save Course Details</button>
-            <button type="button">Delete Course</button>
-           
-          </form>
-    </footer>
+		<div class="course-navigation">
+			<div><a href="current_courses.html">Current Courses</a></div>
+			<div><a href="completed_courses.html">Completed Courses</a></div>
+			<div style="text-decoration-line: underline;"><b>Add A New Course</b></div>
+		</div>
+
+		<div class="container" id="addCourse">
+			<form method="post" action="">
+				<input type="text" id="courseName" name="courseName" placeholder="Course Name" required>
+				<input type="text" id="websiteUrl" name="websiteUrl" placeholder="Course URL">
+				<input type="text" id="certificateTrack" name="certificateTrack" placeholder="Certificate Track">
+				<textarea style="resize: none" id="courseDetails" name="courseDetails" placeholder="Course Details / Notes"></textarea>
+				<input type="checkbox"  id="currentlyEnrolled" name="currentlyEnrolled">
+				<label for="currentlyEnrolled"> Currently Enrolled</label>
+				<input type="checkbox" id="completed" name="completed">
+				<label for="completed"> Completed on: </label>
+				<input type="date" id="completedDate" name="completedDate" placeholder="Date">
+				<button class="submit-btn" id="submitNewCourse">Save Course</button>
+			</form>
+		</div>
+	</body>
+</html>

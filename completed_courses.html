@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name = "viewport" content="width-device-width, initial-scale=1.0">
+		<title>Current Courses</title>
+		<link rel="stylesheet" href="completed_courses.css">
+		<script type="module" src="Firebase_completedcourses.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<img src="images/Logo.png" alt="Logo" class="logo">
+			<nav>
+				<ul>
+					<li><a href="CurrentCourses.html">My Education</a></li>
+					<li><a href="documents.html">Documents</a></li>
+					<li><a href="reports.html">Reports</a></li>
+				</ul>
+			</nav>
+			<button class="account-btn" id="logout">Logout: <span id="loggedUserFirstName"></span></button>
+		</header>
+
+		<section div class = "course-navigation">
+			<div><a href="current_courses.html">Current Courses</a></div>
+			<div style="text-decoration-line: underline;"><b>Completed Courses</b></div>
+			<div><a href="AddNewCourse.html">Add A New Course</a></div>
+		</section>
+
+		<section div class = "view-completed-courses">
+			<table class = "courses-table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Description</th>
+						<th>Link</th>
+						<th>Certificate Track</th>
+						<th>Date Completed</th>
+					</tr>
+				</thead>
+				<tbody id="completedCoursesTable">
+				</tbody>
+			</table>
+		</section>
+
+		<section div class="options">
+			<button class="edit-btn">Edit</button>
+			<button class="delete-btn">Delete</button>
+		</section>
+	</body>
+</html>

@@ -155,7 +155,7 @@ h1, h2 {
 }
 
 .documents-table {
-    width: 60%;
+    width: 100%;
     border-collapse: collapse;
 }
 
@@ -194,5 +194,18 @@ h1, h2 {
 }
 
 .action-btn:hover {
+    background-color: #0056b3;
+}
+
+.download-btn {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.download-btn:hover {
     background-color: #0056b3;
 }

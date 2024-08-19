@@ -85,58 +85,82 @@ nav a:hover {
 	cursor: pointer;
 }
 
-.container {
-	width: 82%;
+.view-completed-courses {
+	display: flex;
+	justify-content: space-between;
+	width: 80%;
 	margin-top: 40px;
-	border-radius: 10px;
-	background-color: white;
 	margin-right: auto;
 	margin-left: auto;
+	background-color: white;
+	padding:20px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+
 }
 
-input[type=text] {
-	width: 29%;
-	height: 50px;
-	margin: 20px 20px;
+.courses-table {
+	border-collapse: collapse;
+	border: 1px solid #ccc;
+	width: 100%;
 }
 
-textarea {
-	box-sizing: border-box;
-	width: 96%;
-	height: 300px;
+.courses-table td {
+	border: 1px solid #ccc;
+	padding: 10px;
+	text-align: left;
+}
+
+.options {
+	width: 80%;
+	display: flex;
+	flex-direction: row;
+	justify-content:right;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.complete-btn {
+	background-color: rgb(2, 112, 2);
+	color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	cursor: pointer;
+	font-size: 1rem;
+}
+
+.complete-btn:hover {
+	background-color: rgb(1, 76, 1)
+}
+
+.edit-btn {
+	background-color: #007BFF;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	cursor: pointer;
+	font-size: 1rem;
 	margin-left: 20px;
 	margin-right: 20px;
 }
 
-input[type=checkbox] {
-	margin-left: 20px;
-	margin-top: 10px;
-	margin-bottom: 10px;
+.edit-btn:hover {
+	background-color: #0056b3;
 }
-
-.submit-btn {
-	background-color: #007BFF;
-	color: white;
-	border: none;
-	padding: 10px 20px;
-	border-radius: 5px;
-	cursor: pointer;
-	font-size: 1.25rem;
-	margin: 20px;
-	margin-right:25px;
-	float: right;
-}
-
 .delete-btn {
 	background-color: rgb(146, 6, 6);
-	color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.25rem;
-	margin-right: 25px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	float: right;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	cursor: pointer;
+	font-size: 1rem;
 }
+
+.delete-btn:hover {
+	background-color: rgb(89, 3, 3);
+}
+
