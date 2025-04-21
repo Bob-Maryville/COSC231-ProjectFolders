@@ -1,0 +1,91 @@
+# COSC498-Capstone Project
+
+## Description
+This script connects to a MySQL database and allows users to reissue tickets by updating the `Reservations` table.
+
+## Prerequisites
+- Python 3.x
+- MySQL database with the `airline_reissues` schema and `Reservations` table.
+
+## How to Run
+1. Install dependencies:
+   ```bash
+   pip3 install mysql-connector-python
+   ```
+2. Run the script:
+   ```bash
+   python3 "COSC498-Capstone Project"
+   ```
+
+import mysql.connector
+import logging
+
+# Configure logging
+logging.basicConfig(filename='reissue_log.txt', level=logging.INFO, format='%(asctime)s - %(message)s')
+
+def connect_to_database():
+    try:
+        return mysql.connector.connect(
+            host='localhost',
+            user='mysql.infoschema',
+            password='2329Amina$',
+            database='airline_reissues'
+        )
+    except mysql.connector.Error as err:
+        print(f"Database connection failed: {err}")
+        exit(1)
+
+# Establish a connection to the database
+connection = connect_to_database()
+
+print("Database connection established.")
+
+# Create a cursor object
+cursor = connection.cursor()
+
+# Describe the Reservations table
+describe_query = "DESCRIBE Reservations;"
+cursor.execute(describe_query)
+for row in cursor.fetchall():
+    print(row)
+
+def reissue_ticket(passenger_id, flight_id):
+    try:
+        update_query = """
+        UPDATE Reservations
+        SET ticket_status = 'reissued'
+        WHERE passenger_id = %s AND flight_id = %s
+        """
+        cursor.execute(update_query, (passenger_id, flight_id))
+        if cursor.rowcount == 0:
+            logging.info(f"No matching record found for passenger_id={passenger_id}, flight_id={flight_id}.")
+            print("No matching record found. Ticket not reissued.")
+        else:
+            connection.commit()
+            logging.info(f"Ticket reissued successfully for passenger_id={passenger_id}, flight_id={flight_id}.")
+            print("Ticket reissued successfully.")
+    except mysql.connector.Error as err:
+        logging.error(f"Error: {err}")
+        print(f"Error: {err}")
+        connection.rollback()
+
+# Example usage
+try:
+    passenger_id = int(input("Enter passenger ID: "))
+    flight_id = int(input("Enter flight ID: "))
+    reissue_ticket(passenger_id, flight_id)
+except ValueError:
+    print("Invalid input. Please enter numeric values for passenger ID and flight ID.")
+
+# Example usage with hardcoded values for testing
+reissue_ticket(1, 2709)  # Valid IDs
+reissue_ticket(999, 999)  # Invalid IDs (should print "No matching record found")
+
+# Close the cursor
+cursor.close()
+
+# Close the connection
+connection.close()
+print("Database connection closed.")
+
+# exec $SHELL
